@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { HomeComponent } from "./components/home.component";
-import { LoginComponent }  from './components/login';
+import { LoginComponent }  from './components/login/login.component';
 import { RegisterComponent }  from './components/register.component';
 import { routing } from "./app.routing";
 
