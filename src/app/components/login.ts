@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: 'login.component.html'
 })
 
-export class LoginComponent {
+export class LoginComponent{
+
+  model: any = {};
+  constructor(){}
+
+  login(){
+
+  }
 
 }
