@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from "../../services/AuthenticationService";
 
 @Component({
   moduleId: module.id,
@@ -6,12 +7,21 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: 'login.component.html'
 })
 
-export class LoginComponent{
+export class LoginComponent {
 
   model: any = {};
-  constructor(){}
+  constructor(
+    private authenticationService: AuthenticationService){ }
 
   login(){
+    this.authenticationService.login(this.model.username, this.model.password)
+      .subscribe(
+        data => {
+          console.log("success");
+        },
+        error => {
+          console.log("failure");
+        });
 
   }
 
