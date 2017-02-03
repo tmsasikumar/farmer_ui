@@ -11,11 +11,14 @@ import { RegisterComponent }  from './components/register.component';
 import {AuthenticationService} from "./services/AuthenticationService";
 import {HttpService} from "./services/httpService";
 import { routing } from "./app.routing";
+import {AuthGuard} from "./guards/auth.guard";
+import { CommonModule } from '@angular/common';
+import {HeaderComponent} from "./components/header/header.component";
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, HttpModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent],
-  providers: [ AuthenticationService, HttpService ],
+  imports:      [ BrowserModule, routing, FormsModule, HttpModule, CommonModule ],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent],
+  providers: [ AuthenticationService, HttpService , AuthGuard],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
