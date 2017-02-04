@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Router} from "@angular/router";
-import { Crops } from '../enums/crops.enum';
-import { CropsEnum } from '../enums/crops.enum';
+import { Crops } from '../../enums/crops.enum';
+import { CropsEnum } from '../../enums/crops.enum';
 
 @Component({
   moduleId: module.id,
