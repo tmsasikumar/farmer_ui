@@ -11,7 +11,7 @@ export class farmerService {
   }
 
   getAllFarmers () : Observable<Farmer[]> {
-    return this.http.get('farmer')
+    return this.http.get('farmer', {})
       .map(res => res.json());
   }
 
