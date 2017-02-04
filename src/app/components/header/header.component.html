@@ -33,7 +33,7 @@
               <a [hidden]="isLoggedIn()" routerLink="/register">Register</a>
             </li>
             <li>
-              <a [hidden]="!isLoggedIn()" (click)="logout()">Logout</a>
+              <a href="#" [hidden]="!isLoggedIn()" (click)="logout()">Logout</a>
             </li>
             <li>
               <a [hidden]="!isLoggedIn()" routerLink="/dashboard">Dashboard</a>
