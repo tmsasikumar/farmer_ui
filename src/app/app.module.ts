@@ -22,12 +22,12 @@ import {KeysPipe} from "./pipes/keys_pipe";
 import {FarmerCardComponent} from "./components/farmer/farmer-card.component";
 import {FarmerCatalogComponent} from "./components/farmer/farmer-catalog.component";
 import {FaqComponent} from "./components/faq/faq.component";
+import {FarmerDetailsComponent} from "./components/FarmerDetails/farmer-details.component";
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe, FaqComponent],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe, FaqComponent, FarmerDetailsComponent],
   providers: [ AuthenticationService, HttpService , AuthGuard, farmerService,  FaqService],
-
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

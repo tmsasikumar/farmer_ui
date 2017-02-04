@@ -35,7 +35,7 @@ export class AddFarmerComponent {
     this.farmerService.add(this.model)
       .subscribe(
         data => {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/farmerDetails']);
         },
         error => {
           this.errorMessage = "Server Error";
