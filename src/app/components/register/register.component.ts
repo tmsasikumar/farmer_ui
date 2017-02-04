@@ -12,10 +12,14 @@ import {HttpService} from "../../services/httpService";
 export class RegisterComponent {
 
   model: any = {};
+  isDuplicate: boolean;
+  hasError: boolean;
   constructor(
     private router: Router,
     private httpService: HttpService,
     private authenticationService: AuthenticationService){
+    this.isDuplicate = false;
+    this.hasError = false;
   }
 
   register(){
@@ -31,6 +35,10 @@ export class RegisterComponent {
               });
         },
         error => {
+          if(error.status == 409){
+            this.isDuplicate = true;
+          }
+          this.hasError = true;
         });
   }
 }

@@ -1,5 +1,14 @@
 <div class="col-sm-4 col-sm-offset-4">
   <h2>Register</h2>
+
+  <div *ngIf="isDuplicate" class="has-error">
+    <div class="help-block">Email Id already exist</div>
+  </div>
+
+  <div *ngIf="hasError" class="has-error">
+    <div class="help-block">We encountered error please contack administrator</div>
+  </div>
+
   <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
