@@ -13,4 +13,16 @@ export class FarmerCardComponent {
   set farmer(farmer: Farmer) {
     this._farmer = Object.assign(farmer);
   }
+
+  getRiskClass(risk: string) {
+    if(risk == "medium") {
+      return 'label-warning'
+    }
+    else if(risk == "high") {
+      return 'label-danger'
+    }
+    else {
+      return 'label-success';
+    }
+  }
 }
