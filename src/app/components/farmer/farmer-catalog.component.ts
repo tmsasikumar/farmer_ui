@@ -27,14 +27,22 @@ export class FarmerCatalogComponent implements OnInit {
       });
 
   }
-  
-  search(location: string){
-    this.filteredFarmer = this.farmers.filter(this.filterByString(location));
+
+  search(location: string, cropTypeValue: any){
+    console.log(Crops[cropTypeValue]);
+    let cropType = Crops[cropTypeValue] ? Crops[cropTypeValue] : null;
+    this.filteredFarmer = this.farmers;
+    if(location){
+      this.filteredFarmer = this.filteredFarmer.filter(this.filterByString(location, "landAddress"));
+    }
+    if(cropType){
+      this.filteredFarmer = this.filteredFarmer.filter(this.filterByString(cropType, "crop"));
+    }
   }
-  private filterByString(filter: string) {
-    filter = filter.toLowerCase();
+  private filterByString(location: string, filterKey: string) {
+    location = location.toLowerCase();
     return (value: {}) => {
-      return !filter || value["landAddress"].toLowerCase().indexOf(filter) !== -1;
+      return !location || value[filterKey].toLowerCase().indexOf(location) !== -1;
     }
 
   }
