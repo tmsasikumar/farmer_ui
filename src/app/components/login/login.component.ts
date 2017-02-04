@@ -11,9 +11,13 @@ import {Router} from "@angular/router";
 export class LoginComponent {
 
   model: any = {};
+  hasError: boolean;
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService){ }
+    private authenticationService: AuthenticationService){
+    this.hasError = false;
+  }
+
 
   login(){
     this.authenticationService.login(this.model.username, this.model.password)
@@ -22,7 +26,7 @@ export class LoginComponent {
           this.router.navigate(['/dashboard']);
         },
         error => {
-          console.log("failure");
+          this.hasError = true;
         });
 
   }
