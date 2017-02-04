@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {farmerService} from "../../services/farmer-service";
 
 @Component({
   moduleId: module.id,
