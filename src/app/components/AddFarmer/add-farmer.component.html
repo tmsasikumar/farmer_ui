@@ -2,78 +2,74 @@
   <h2>Add a Farmer</h2>
 
   <div *ngIf="hasError" class="has-error">
-    <div class="help-block">Enter all mandatory fields</div>
+    <div class="alert alert-danger fade in"><strong>Error! </strong>{{errorMessage}}</div>
   </div>
-  <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <form name="addFarmer" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
       <label>Farmer Name</label>
-      <input type="text" class="form-control" name="username" [(ngModel)]="model.userName" #username="ngModel"
+      <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel"
              required/>
-      <div *ngIf="f.submitted && !userName.valid" class="help-block">User name is required</div>
+      <div *ngIf="f.submitted && !name.valid" class="help-block">User name is required</div>
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
       <label>Land Area</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
+      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #landArea="ngModel"
              required/>
       <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !farmerId.valid }">
       <label>Farmer Id</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
+      <input type="text" class="form-control" name="farmerId" [(ngModel)]="model.farmerId" #farmerId="ngModel"
              required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <div *ngIf="f.submitted && !farmerId.valid" class="help-block">Farmer Id is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !aadhar.valid}">
       <label>Aadhar Card Number</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
-             required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <input type="text" class="form-control" name="aadhar" [(ngModel)]="model.aadhar" #aadhar="ngModel"/>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landAddress.valid }">
       <label>Land Address</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
+      <input type="text" class="form-control" name="landAddress" [(ngModel)]="model.landAddress" #landAddress="ngModel"
              required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Address is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landReg.valid }">
       <label>Land Registration Number</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
+      <input type="text" class="form-control" name="landReg" [(ngModel)]="model.landReg" #landReg="ngModel"
              required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Registration Number is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cultivationDate.valid }">
       <label>Cultivation Date</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
+      <input type="date" class="form-control" name="cultivationDate" [(ngModel)]="model.cultivationDate" #cultivationDate="ngModel"
              required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Cultivation Date is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !landArea.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted }">
       <label>Harvest Date</label>
-      <input type="text" class="form-control" name="landArea" [(ngModel)]="model.landArea" #password="ngModel"
-             required/>
-      <div *ngIf="f.submitted && !landArea.valid" class="help-block">Land Area is required</div>
+      <input type="date" class="form-control" name="harvestDate" [(ngModel)]="model.harvestDate"/>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !image.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
       <label for="image_file">Please add your image</label>
-      <input type="file" name="image_file" id="image_file" onchange="fileSelected();"/>
+      <input type="file" name="photo" id="image_file_for_farmer" onchange="fileSelected();" [(ngModel)]="model.photo" #photo="ngModel"/>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !image.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
       <label for="image_file">Please add your land image</label>
-      <input type="file" name="image_file" id="image_file" onchange="fileSelected();"/>
+      <input type="file" name="image_file" id="image_file_for_land" onchange="fileSelected();"/>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error' : f.submitted && !crop.valid}">
-
+    <div class="form-group" [ngClass]="{ 'has-error' : f.submitted}">
+      <label >Choose Crops</label>
       <select>
         <option *ngFor="let item of crops | keys" [value]="item.key">{{item.value}}</option>
       </select>

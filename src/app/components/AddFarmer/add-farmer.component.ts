@@ -15,6 +15,7 @@ import {KeysPipe} from "../../pipes/keys_pipe";
 export class AddFarmerComponent {
 
   model: any = {};
+  errorMessage: string;
   hasError: boolean;
   crops: any;
   constructor(
@@ -22,6 +23,10 @@ export class AddFarmerComponent {
     private farmerService: farmerService){
     this.hasError = false;
     this.crops = Crops;
+    let user= JSON.parse(localStorage.getItem("currentUser"));
+    if(user["role"] == "FEF"){
+      this.model.FEF = user["emailId"];
+    }
     //this.crops = []
   }
 
@@ -30,9 +35,13 @@ export class AddFarmerComponent {
     this.farmerService.add(this.model)
       .subscribe(
         data => {
-          this.router.navigate(['/farmer']);
+          this.router.navigate(['/dashboard']);
         },
         error => {
+          this.errorMessage = "Server Error";
+          if(error.status == 409){
+            this.errorMessage = "Farmer ID Already Exists";
+          }
           this.hasError = true;
         });
 
