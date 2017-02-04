@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Farmer} from '../../interface/farmer.interface';
+
 
 @Component({
   moduleId: module.id,
