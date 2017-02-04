@@ -17,10 +17,11 @@ import {HeaderComponent} from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import {farmerService} from "./services/farmer-service";
 import {AddFarmerComponent} from "./components/AddFarmer/add-farmer.component";
+import {KeysPipe} from "./pipes/keys_pipe";
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent, KeysPipe],
   providers: [ AuthenticationService, HttpService , AuthGuard, farmerService],
   bootstrap:    [ AppComponent ]
 })

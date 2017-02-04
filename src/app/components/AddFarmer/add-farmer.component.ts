@@ -3,6 +3,7 @@ import {farmerService} from "../../services/farmer-service";
 import {Router} from "@angular/router";
 import { Crops } from '../../enums/crops.enum';
 import { CropsEnum } from '../../enums/crops.enum';
+import {KeysPipe} from "../../pipes/keys_pipe";
 
 @Component({
   moduleId: module.id,
@@ -10,15 +11,17 @@ import { CropsEnum } from '../../enums/crops.enum';
   templateUrl: 'add-farmer.component.html'
 })
 
+
 export class AddFarmerComponent {
 
   model: any = {};
   hasError: boolean;
+  crops: any;
   constructor(
     private router: Router,
     private farmerService: farmerService){
     this.hasError = false;
-    //this.crops = Crops;
+    this.crops = Crops;
     //this.crops = []
   }
 

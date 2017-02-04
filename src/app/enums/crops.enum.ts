@@ -4,8 +4,8 @@ export function CropsEnum(constructor: Function) {
 
 
 export enum Crops {
-  Rice,
-  Wheat,
-  Ragi,
-  Maize
+  Rice = 1,
+  Wheat = 2,
+  Ragi = 3,
+  Maize = 4
 }
