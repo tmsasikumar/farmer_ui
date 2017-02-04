@@ -20,7 +20,7 @@ export class LoginComponent {
 
 
   login(){
-    this.authenticationService.login(this.model.username, this.model.password)
+    this.authenticationService.login(this.model.emailId, this.model.password)
       .subscribe(
         data => {
           this.router.navigate(['/dashboard']);
