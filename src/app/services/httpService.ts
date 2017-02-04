@@ -8,7 +8,8 @@ export class HttpService {
   constructor(private http: Http) { }
 
   private encodeQueryData(params: {}): string {
-    let ret: any[];
+    let ret: string[];
+    ret = [];
     for (let param in params)
       ret.push(encodeURIComponent(param) + '=' + encodeURIComponent(params[param]));
     if(ret) {

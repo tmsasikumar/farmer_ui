@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     { path: 'addFarmer', component: AddFarmerComponent },
     { path: 'faq', component: FaqComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-    { path: 'farmerDetails', component: FarmerDetailsComponent},
+    { path: 'farmerDetails/:id', component: FarmerDetailsComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

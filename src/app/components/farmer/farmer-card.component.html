@@ -10,7 +10,7 @@
         <p>Crop : {{_farmer.crop}}, {{_farmer.cropType}}</p>
       </div>
       <div class="premium">Premium : INR {{ _farmer.cropPremium}}/-</div>
-      <button class="btn btn-primary">View details</button>
+      <button class="btn btn-primary" routerLink="/farmerDetails/{{_farmer.farmerId}}">View details</button>
     </div>
   </div>
 

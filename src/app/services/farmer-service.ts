@@ -15,6 +15,25 @@ export class farmerService {
       .map(res => res.json());
   }
 
+  getSpecificFarmer (farmerId: String) : Observable<Farmer> {
+    return this.http.get('farmer', {"farmerId" : farmerId})
+      .map(res => res.json());
+  }
+
+  getStatus(farmerId: any) : Observable<{}>{
+
+    return this.http.post('getPaymentStatus', farmerId)
+      .map((res => res.json()));
+  }
+
+  pay(farmerId: any) : Observable<{}>{
+
+    return this.http.post('pay', farmerId)
+      .map((res => res.json()));
+  }
+
+
+
   add(farmer: any) {
 
     //let params = { emailId: username, password: password };

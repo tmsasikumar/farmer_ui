@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Router} from "@angular/router";
-import { Crops } from '../../enums/crops.enum';
-import { CropsEnum } from '../../enums/crops.enum';
+import {Crops} from '../../enums/crops.enum';
+import {CropsEnum} from '../../enums/crops.enum';
 import {KeysPipe} from "../../pipes/keys_pipe";
 
 @Component({
@@ -18,28 +18,28 @@ export class AddFarmerComponent {
   errorMessage: string;
   hasError: boolean;
   crops: any;
-  constructor(
-    private router: Router,
-    private farmerService: farmerService){
+
+  constructor(private router: Router,
+              private farmerService: farmerService) {
     this.hasError = false;
     this.crops = Crops;
-    let user= JSON.parse(localStorage.getItem("currentUser"));
-    if(user["role"] == "FEF"){
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user["role"] == "FEF") {
       this.model.FEF = user["emailId"];
     }
     //this.crops = []
   }
 
 
-  add(){
+  add() {
     this.farmerService.add(this.model)
       .subscribe(
         data => {
-          this.router.navigate(['/farmerDetails']);
+          this.router.navigate(['/farmerDetails', this.model.farmerId]);
         },
         error => {
           this.errorMessage = "Server Error";
-          if(error.status == 409){
+          if (error.paymentStatus == 409) {
             this.errorMessage = "Farmer ID Already Exists";
           }
           this.hasError = true;
