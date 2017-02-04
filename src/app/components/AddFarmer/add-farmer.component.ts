@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Router} from "@angular/router";
+import { Crops } from '../enums/crops.enum';
+import { CropsEnum } from '../enums/crops.enum';
 
 @Component({
   moduleId: module.id,
@@ -16,14 +18,16 @@ export class AddFarmerComponent {
     private router: Router,
     private farmerService: farmerService){
     this.hasError = false;
+    //this.crops = Crops;
+    //this.crops = []
   }
 
 
-  login(){
+  add(){
     this.farmerService.add(this.model)
       .subscribe(
         data => {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/farmer']);
         },
         error => {
           this.hasError = true;
