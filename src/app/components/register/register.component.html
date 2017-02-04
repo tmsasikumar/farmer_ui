@@ -1,31 +1,74 @@
-<div class="col-md-6 col-md-offset-3">
+<div class="col-sm-4 col-sm-offset-4">
   <h2>Register</h2>
   <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-      <label>Username</label>
-      <input type="text" class="form-control" name="username" [(ngModel)]="model.username"
-             #username="ngModel" minlength="4" maxlength="24" required />
-      <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-      <div *ngIf="username.touched" class="help-block">touched</div>
-      <div *ngIf="username.dirty" class="help-block">dirty</div>
-      <div *ngIf="username.invalid" class="help-block">invalid</div>
-      <div *ngIf="username.errors">
-        <div *ngIf="username.errors.minlength" class="help-block">should more than 4</div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="model.name"
+             #name="ngModel" minlength="4" maxlength="24" required/>
+      <div *ngIf="f.submitted && !name.valid && name.errors && name.errors.required" class="help-block">Name is
+        required
       </div>
+      <div *ngIf="name.errors && name.errors.minlength" class="help-block">Name should have minimum 4 character</div>
     </div>
+
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
       <label>Password</label>
-      <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-      <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-    </div>
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !phone.valid }">
-      <label>phone</label>
-      <input type="text" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" required pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$" />
-      <div *ngIf="f.submitted && !phone.valid" class="help-block">phone is required</div>
-      <div *ngIf="phone.errors">
-        <div *ngIf="phone.errors.pattern" class="help-block">not a phone number</div>
+      <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+             minlength="4" maxlength="24" required/>
+      <div *ngIf="f.submitted && !password.valid && password.errors && password.errors.required" class="help-block">
+        Password is required
+      </div>
+      <div *ngIf="password.errors && password.errors.minlength" class="help-block">Password should have minimum 4
+        character
       </div>
     </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !phoneNumber.valid }">
+      <label>Phone</label>
+      <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel"
+             minlength="10" maxlength="10" required
+             pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"/>
+      <div *ngIf="f.submitted && !phoneNumber.valid && phoneNumber.errors && phoneNumber.errors.required"
+           class="help-block">Phone Number is required
+      </div>
+      <div *ngIf="phoneNumber.errors && phoneNumber.errors.pattern" class="help-block">Invalid Phone number</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !emailId.valid }">
+      <label>Email Id</label>
+      <input type="text" class="form-control" name="emailId" [(ngModel)]="model.emailId" #emailId="ngModel"
+             required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+      <div *ngIf="f.submitted && !emailId.valid && emailId.errors && emailId.errors.required" class="help-block">Email
+        Id is required
+      </div>
+      <div *ngIf="emailId.errors && emailId.errors.pattern" class="help-block">Email is invalid</div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !role.errors }">
+      <label>Role </label>
+
+      <label class="radio-inline">
+        <input type="radio" class="radio-inline" [(ngModel)]="model.role" #role="ngModel" name="role" value="CS" checked="checked">Crop saver
+      </label>
+      <label class="radio-inline">
+        <input type="radio" class="radio-inline" [(ngModel)]="model.role" #role="ngModel" name="role" value="FEF">Farmer educated friend
+      </label>
+      <!--TODO: validation-->
+      <!--<div *ngIf="f.submitted && !role.valid" class="help-block">Please select role-->
+      <!--</div>-->
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address.valid }">
+      <label>Address</label>
+      <textarea class="form-control" name="address" [(ngModel)]="model.address"
+                #address="ngModel" minlength="10" maxlength="100" required></textarea>
+      <div *ngIf="f.submitted && !address.valid && address.errors && address.errors.required" class="help-block">Name is
+        required
+      </div>
+      <div *ngIf="address.errors && address.errors.minlength" class="help-block">Name should have minimum 10 character</div>
+    </div>
+
     <div class="form-group">
       <button class="btn btn-primary">Register</button>
     </div>
