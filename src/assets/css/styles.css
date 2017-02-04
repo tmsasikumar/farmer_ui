@@ -7,13 +7,17 @@
   font-weight: bold;
   background: url("../images/loading.gif") no-repeat;
   background-size: contain;
-  transform: translate(-80px, -80px);
+  transform: translate(-40px, -40px);
 }
 
 .label-wrap {
   display: flex;
   justify-content:center;
 }
+.label-wrap p {
+  margin-bottom: 5px;
+}
+
 .label.risk-label {
   position: absolute;
   top: 20px;
@@ -24,6 +28,50 @@
 
 .thumbnail img {
   width: 100%;
+  min-height: 100px;
   max-height: 200px;
   overflow: hidden;
+}
+.premium {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.caption h3 {
+  text-transform: capitalize;
+  margin: 10px 0;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.caption h3 small {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+  text-align: center;
+  padding: 10px 10px 0;
+}
+
+.viewport-height {
+  min-height: calc(100% - 37px );
+}
+
+.grey-box {
+  background: #ece8e8;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.grey-box h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.5;
+  border-bottom: 1px solid #cccbcb;
+}
+
+.farmer-catalog {
+  margin-bottom: 50px;
 }
