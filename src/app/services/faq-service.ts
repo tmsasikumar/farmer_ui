@@ -12,8 +12,7 @@ export class FaqService {
   getFaq  (): Observable<Faq>{
 
     return this.http.get('faq',{})
-      .map(res => res.json())
-      .catch(this.handleError)
+      .map(res => res.json());
   }
 
   private handleError (error: Response | any) {

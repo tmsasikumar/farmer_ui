@@ -4,13 +4,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">FAQ
-        <small>Subheading</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="index.html">Home</a>
-        </li>
-        <li class="active">FAQ</li>
-      </ol>
     </div>
   </div>
   <!-- /.row -->
@@ -18,14 +12,14 @@
   <!-- Content Row -->
   <div class="row">
     <div class="col-lg-12">
-      <div class="panel-group" id="accordion" *ngFor='let value of faqs'>
+      <div class="panel-group" id="accordion" *ngFor='let value of faqs; let i = index'>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ value.question}}</a>
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">{{ value.question}}</a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse">
+          <div id="collapse{{i}}" class="panel-collapse collapse">
             <div class="panel-body">
              {{ value.answer }}
             </div>
@@ -40,13 +34,5 @@
 
   <hr>
 
-  <!-- Footer -->
-  <footer>
-    <div class="row">
-      <div class="col-lg-12">
-        <p>Copyright &copy; Your Website 2014</p>
-      </div>
-    </div>
-  </footer>
 
 </div>
