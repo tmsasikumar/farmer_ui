@@ -18,10 +18,13 @@ import { FooterComponent } from "./components/footer/footer.component";
 import {farmerService} from "./services/farmer-service";
 import {AddFarmerComponent} from "./components/AddFarmer/add-farmer.component";
 import {KeysPipe} from "./pipes/keys_pipe";
+import {FarmerCardComponent} from "./components/farmer/farmer-card.component";
+import {FarmerCatalogComponent} from "./components/farmer/farmer-catalog.component";
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent, KeysPipe],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent,
+    HeaderComponent, AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe],
   providers: [ AuthenticationService, HttpService , AuthGuard, farmerService],
   bootstrap:    [ AppComponent ]
 })
