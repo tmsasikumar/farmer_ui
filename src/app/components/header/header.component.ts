@@ -11,10 +11,11 @@ export class HeaderComponent  {
   constructor(private router: Router){}
 
   isLoggedIn(): boolean{
-    if (localStorage.getItem('currentUser')) {
-      return true;
-    }
-    return false;
+    return localStorage.getItem('currentUser') != null;
+  }
+
+  isFef(): boolean {
+      return this.isLoggedIn() && JSON.parse(localStorage.getItem("currentUser")).role == 'FEF';
   }
 
   logout(){
