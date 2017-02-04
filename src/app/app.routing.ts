@@ -2,7 +2,7 @@
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from "./components/register/register.component";
-import { AddFarmerComponent } from "./components/AddFarmer/add-farmer.component";
+import { AddFarmerComponent } from "./components/farmer/add-farmer.component";
 import { HomeComponent } from "./components/home.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {AuthGuard} from "./guards/auth.guard";

@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 import {HeaderComponent} from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import {farmerService} from "./services/farmer-service";
-import {AddFarmerComponent} from "./components/AddFarmer/add-farmer.component";
+import {AddFarmerComponent} from "./components/farmer/add-farmer.component";
 import {KeysPipe} from "./pipes/keys_pipe";
 import {FarmerCardComponent} from "./components/farmer/farmer-card.component";
 import {FarmerCatalogComponent} from "./components/farmer/farmer-catalog.component";
