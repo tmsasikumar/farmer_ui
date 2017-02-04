@@ -12,7 +12,7 @@
       <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
     </div>
 
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
       <label>Password</label>
       <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
              required/>
