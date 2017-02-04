@@ -7,9 +7,9 @@ import {HttpService} from "./httpService";
 export class AuthenticationService {
   constructor(private http: HttpService) {}
 
-  login(username: string, password: string) {
+  login(emailId: string, password: string) {
 
-    let params = { emailId: username, password: password };
+    let params = { emailId: emailId, password: password };
 
     return this.http.post('login', params)
       .map((response: Response) => {
