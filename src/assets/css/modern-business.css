@@ -85,7 +85,11 @@ body {
 /* Footer Styles */
 
 footer {
-    margin: 20px 0;
+  padding: 10px;
+  background: #444444;
+  color: #cccccc;
+  font-size: 12px;
+  text-align: center;
 }
 
 /* Responsive Styles */
