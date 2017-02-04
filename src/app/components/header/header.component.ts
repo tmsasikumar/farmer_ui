@@ -14,8 +14,11 @@ export class HeaderComponent  {
     return localStorage.getItem('currentUser') != null;
   }
 
-  isFef(): boolean {
-      return this.isLoggedIn() && JSON.parse(localStorage.getItem("currentUser")).role == 'FEF';
+  isFefOrSa(): boolean {
+      if(this.isLoggedIn())  {
+        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        return currentUser.role == 'FEF' || currentUser.role == 'SA';
+      }
   }
 
   logout(){

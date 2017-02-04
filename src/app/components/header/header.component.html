@@ -17,8 +17,8 @@
         <li>
           <a routerLink="/">Home</a>
         </li>
-        <li *ngIf="isFef()">
-          <a href="/addFarmer">Add Farmer</a>
+        <li *ngIf="isFefOrSa()">
+          <a routerLink="/addFarmer">Add Farmer</a>
         </li>
         <li>
           <a href="/">FAQ</a>

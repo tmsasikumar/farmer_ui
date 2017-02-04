@@ -13,13 +13,15 @@ import {HttpService} from "./services/httpService";
 import { Routing } from "./app.routing";
 import {AuthGuard} from "./guards/auth.guard";
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "./components/header/header.component";
+import {HeaderComponent} from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import {farmerService} from "./services/farmer-service";
+import {AddFarmerComponent} from "./components/AddFarmer/add-farmer.component";
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, FooterComponent],
-  providers: [ AuthenticationService, HttpService , AuthGuard],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent],
+  providers: [ AuthenticationService, HttpService , AuthGuard, farmerService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
