@@ -14,6 +14,10 @@ export class FarmerCardComponent {
     this._farmer = Object.assign(farmer);
   }
 
+  getPhotoUrl(photoName: string){
+    return "http://localhost:8081/api/getPhoto?urlName=" + photoName;
+  }
+
   getRiskClass(risk: string) {
     if(risk == "medium") {
       return 'label-warning'

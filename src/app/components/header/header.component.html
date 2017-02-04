@@ -41,8 +41,8 @@
             <li *ngIf="isLoggedIn()">
               <a routerLink="/dashboard">Dashboard</a>
             </li>
-            <li>
-              <a href="/">My farmers</a>
+            <li *ngIf="isLoggedIn()">
+              <a routerLink="/">My farmers</a>
             </li>
           </ul>
         </li>
