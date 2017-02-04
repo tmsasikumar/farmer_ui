@@ -7,16 +7,16 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from "./components/home.component";
 import { LoginComponent }  from './components/login/login.component';
 import { DashboardComponent }  from './components/dashboard/dashboard.component';
-import { RegisterComponent }  from './components/register.component';
+import { RegisterComponent }  from './components/register/register.component';
 import {AuthenticationService} from "./services/AuthenticationService";
 import {HttpService} from "./services/httpService";
-import { routing } from "./app.routing";
+import { Routing } from "./app.routing";
 import {AuthGuard} from "./guards/auth.guard";
 import { CommonModule } from '@angular/common';
 import {HeaderComponent} from "./components/header/header.component";
 
 @NgModule({
-  imports:      [ BrowserModule, routing, FormsModule, HttpModule, CommonModule ],
+  imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
   declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent],
   providers: [ AuthenticationService, HttpService , AuthGuard],
   bootstrap:    [ AppComponent ]
