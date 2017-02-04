@@ -13,8 +13,6 @@ export class AuthenticationService {
 
     return this.http.post('login', params)
       .map((response: Response) => {
-
-        console.log(response.json());
         let user = response.json();
         if (user) {
           localStorage.setItem('currentUser', JSON.stringify(user));
