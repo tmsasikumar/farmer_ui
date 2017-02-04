@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent  {
