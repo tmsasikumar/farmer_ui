@@ -8,7 +8,12 @@ import {Router} from "@angular/router";
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent  {
-  constructor(private router: Router){}
+  edited: boolean;
+  constructor(private router: Router){
+    this.edited = false;
+  }
+
+
 
   isLoggedIn(): boolean{
     return localStorage.getItem('currentUser') != null;
@@ -23,6 +28,13 @@ export class HeaderComponent  {
 
   logout(){
     localStorage.removeItem('currentUser');
+    this.edited = true;
     this.router.navigate(['/']);
+
+    setTimeout(function() {
+      this.edited = false;
+      console.log(this.edited);
+    }.bind(this), 2000);
+    
   }
 }
