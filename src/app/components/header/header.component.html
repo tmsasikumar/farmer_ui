@@ -11,10 +11,6 @@
       </button>
       <a class="navbar-brand" routerLink="/">Save Farmer</a>
     </div>
-
-    <div  *ngIf="edited" class="alert alert-success">
-      You have been logged out!!
-    </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -53,3 +49,6 @@
   </div>
   <!-- /.container -->
 </nav>
+<div  *ngIf="edited" class="alert alert-success fixed-alert">
+  <strong>Congrts!!!</strong> You have logged out successfully.
+</div>
