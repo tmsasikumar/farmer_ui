@@ -15,7 +15,6 @@
 
   <!-- Portfolio Item Row -->
   <div class="row">
-
     <div class="col-md-8">
       <img class="img-responsive" src="{{getPhotoUrl(farmer.landPhoto)}}" alt="">
     </div>
@@ -44,22 +43,23 @@
         <li><label>Cultivation Date:</label> {{farmer.cultivationDate}}</li>
         <li><label>Harvest Date:</label> {{farmer.harvestDate}}</li>
       </ul>
-    </div>
-  </div>
 
-  <div *ngIf="!isStatusLoading" class="action-button">
-    <button *ngIf="paymentStatus.paymentStatus == '0' " (click)="insure()" class="btn btn-primary">
-      <i class="fa fa-user"></i> Insure farmer
-    </button>
-    <div *ngIf="paymentStatus.paymentStatus == '1'" class="action-button">
-      <button class="btn btn-warning">
-        <i class="fa fa-circle-o-notch fa-spin fa-fw margin-bottom"></i>Paid & Awaiting Approval
-      </button>
-    </div>
-    <div *ngIf="paymentStatus.paymentStatus == '2'" class="action-button">
-      <button class="btn btn-success">
-        <i class="fa fa-check-circle-o"></i> Approved
-      </button>
+      <div *ngIf="!isStatusLoading" class="action-button">
+        <button *ngIf="paymentStatus.paymentStatus == '0' " (click)="insure()" class="btn btn-primary">
+          <i class="fa fa-user"></i> Insure farmer
+        </button>
+        <div *ngIf="paymentStatus.paymentStatus == '1'" class="action-button">
+          <button class="btn btn-warning">
+            <i class="fa fa-circle-o-notch fa-spin fa-fw margin-bottom"></i> Paid & Awaiting for Approval
+          </button>
+        </div>
+        <div *ngIf="paymentStatus.paymentStatus == '2'" class="action-button">
+          <button class="btn btn-success">
+            <i class="fa fa-check-circle-o"></i> Approved
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

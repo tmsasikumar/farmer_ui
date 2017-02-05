@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="no-result" *ngIf="noFarmers">You don't have any related farmers</div>
-    <div class="col-md-4 text-center" *ngFor="let farmer of filteredFarmer">
+    <div class="col-md-4 col-sm-6 text-center" *ngFor="let farmer of filteredFarmer">
       <farmer-card [farmer]="farmer"></farmer-card>
     </div>
     <div class="no-result" *ngIf="filteredFarmer && filteredFarmer.length == 0">No search result found...</div>

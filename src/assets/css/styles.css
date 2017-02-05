@@ -97,11 +97,10 @@
 }
 
 .action-button {
-  text-align: center;
   margin: 20px 0 40px;
 }
 .action-button button {
-  width: 200px;
+  min-width: 200px;
   padding: 10px 15px;
 }
 
