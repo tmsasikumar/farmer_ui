@@ -20,7 +20,6 @@ export class farmerService {
         .map(res => res.json());
     }
     else {
-      console.log("its here..........." + userId);
       let user = JSON.parse(localStorage.getItem("currentUser"));
       if(user.role == "CS")
       {

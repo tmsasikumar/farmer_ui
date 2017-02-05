@@ -1,7 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Crops} from "../../enums/crops.enum";
-import error = webdriver.error;
 
 
 @Component({
@@ -41,7 +40,6 @@ export class FarmerCatalogComponent implements OnInit {
   }
 
   search(location: string, cropTypeValue: any){
-    console.log(Crops[cropTypeValue]);
     let cropType = Crops[cropTypeValue] ? Crops[cropTypeValue] : null;
     this.filteredFarmer = this.farmers;
     if(location){
