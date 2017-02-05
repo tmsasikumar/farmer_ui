@@ -3,13 +3,19 @@
     <div class="col-lg-12">
       <h2 class="page-header">Our Farmers</h2>
     </div>
-    Location:<input type="text" #searchByLocation class="form-control" placeholder="Search" (keyup)="search(searchByLocation.value, searchByCropType.value)">
-    <select #searchByCropType (change)="search(searchByLocation.value, searchByCropType.value)">
-    <option value="0">Filter by crop</option>
-    <option *ngFor="let item of crops | keys" [value]="item.key">{{item.value}}</option>
-    </select>
+    <div class="col-md-12">
+      <div class="search-block">
+        <input type="text" #searchByLocation class="form-control" placeholder="Search by location"
+               (keyup)="search(searchByLocation.value, searchByCropType.value)">
+        <select #searchByCropType (change)="search(searchByLocation.value, searchByCropType.value)">
+          <option value="0">Filter by crop</option>
+          <option *ngFor="let item of crops | keys" [value]="item.key">{{item.value}}</option>
+        </select>
+      </div>
+    </div>
     <div class="col-md-4 text-center" *ngFor="let farmer of filteredFarmer">
       <farmer-card [farmer]="farmer"></farmer-card>
     </div>
+    <div class="no-result" *ngIf="filteredFarmer && filteredFarmer.length == 0">No search result found...</div>
   </div>
 </div>
