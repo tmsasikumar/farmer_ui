@@ -50,16 +50,12 @@ export class FarmerDetailsComponent implements OnInit {
   insure(){
     this.isStatusLoading = true;
     this.farmerService.pay({"farmerId": this.farmerId})
-      .subscribe(response=> this.successHandler(),
+      .subscribe(response=> this.paymentStatus = response,
         error => {
           this.errorMessage = "Server Error";
           if (error.status == 409) {
             this.errorMessage = "Farmer ID Already Exists";
           }
-        });
-  }
-
-  private successHandler() {
-    this.getStatus();
+        },()=> this.isStatusLoading = false);
   }
 }
