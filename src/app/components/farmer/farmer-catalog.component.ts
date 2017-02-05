@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Crops} from "../../enums/crops.enum";
 
@@ -13,14 +13,20 @@ import {Crops} from "../../enums/crops.enum";
 export class FarmerCatalogComponent implements OnInit {
   private farmers: Farmer[];
   private filteredFarmer: Farmer[];
+  private userId: string;
   crops: any;
 
   constructor(private farmerService: farmerService) {
     this.crops = Crops;
   }
 
+  @Input()
+  set emailId(emailId: string) {
+    this.userId = emailId;
+  }
+
   ngOnInit() {
-    this.farmerService.getAllFarmers()
+    this.farmerService.getAllFarmers(this.userId)
       .subscribe(AllFarmers => {
         this.farmers = AllFarmers;
         this.filteredFarmer = this.farmers;

@@ -10,6 +10,7 @@ import { DashboardComponent }  from './components/dashboard/dashboard.component'
 import { RegisterComponent }  from './components/register/register.component';
 import {AuthenticationService} from "./services/AuthenticationService";
 import {HttpService} from "./services/httpService";
+import { MyFarmersComponent } from "./components/farmer/my-farmers.component";
 import { Routing } from "./app.routing";
 import {AuthGuard} from "./guards/auth.guard";
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,10 @@ import {FarmerDetailsComponent} from "./components/FarmerDetails/farmer-details.
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent, AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe, FaqComponent, FarmerDetailsComponent, ContactComponent],
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent,
+    AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe, FaqComponent,
+    FarmerDetailsComponent, MyFarmersComponent, ContactComponent
+  ],
   providers: [ AuthenticationService, HttpService , AuthGuard, farmerService,  FaqService],
   bootstrap:    [ AppComponent ]
 })

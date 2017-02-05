@@ -9,10 +9,29 @@ export class farmerService {
   constructor(private http: HttpService) {
 
   }
+  // getAllFarmers () : Observable<Farmer[]> {
+  //     return this.http.get('farmer', {})
+  //       .map(res => res.json());
+  // }
 
-  getAllFarmers () : Observable<Farmer[]> {
-    return this.http.get('farmer', {})
-      .map(res => res.json());
+  getAllFarmers (userId: string) : Observable<Farmer[]> {
+    if(!userId) {
+      return this.http.get('farmer', {})
+        .map(res => res.json());
+    }
+    else {
+      console.log("its here..........." + userId);
+      let user = JSON.parse(localStorage.getItem("currentUser"));
+      if(user.role == "CS")
+      {
+        return this.http.get('farmer', {userId: userId})
+          .map(res => res.json());
+      }
+      else {
+        return this.http.get('farmer', {FEFId: userId})
+          .map(res => res.json());
+      }
+    }
   }
 
   getSpecificFarmer (farmerId: String) : Observable<Farmer> {
