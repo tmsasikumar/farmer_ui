@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {farmerService} from "../../services/farmer-service";
-import {_finally} from "rxjs/operator/finally";
 
 @Component({
   moduleId: module.id,
@@ -19,8 +18,11 @@ export class FarmerDetailsComponent implements OnInit {
   emailId: string;
   updateDoner: boolean = false;
 
-  constructor(private farmerService: farmerService, route: ActivatedRoute) {
+  constructor(private farmerService: farmerService, route: ActivatedRoute, private router: Router) {
     this.farmerId = route.snapshot.params['id'];
+    if(!JSON.parse(localStorage.getItem("currentUser"))){
+      this.router.navigate(['/login']);
+    }
     let user = JSON.parse(localStorage.getItem("currentUser"));
     this.emailId = user["emailId"];
     this.getStatus();
