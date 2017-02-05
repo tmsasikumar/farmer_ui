@@ -17,6 +17,7 @@ export class FarmerDetailsComponent implements OnInit {
   isStatusLoading: boolean;
   paymentStatus: any;
   emailId: string;
+  updateDoner: boolean = false;
 
   constructor(private farmerService: farmerService, route: ActivatedRoute) {
     this.farmerId = route.snapshot.params['id'];
@@ -54,6 +55,10 @@ export class FarmerDetailsComponent implements OnInit {
         ()=> this.isStatusLoading = false);
   }
 
+  update(){
+    this.isStatusLoading = false;
+    this.updateDoner = true;
+  }
   insure(){
     this.isStatusLoading = true;
     this.farmerService.pay({"farmerId": this.farmerId, "emailId": this.emailId})
@@ -63,6 +68,6 @@ export class FarmerDetailsComponent implements OnInit {
           if (error.status == 409) {
             this.errorMessage = "Farmer ID Already Exists";
           }
-        },()=> this.isStatusLoading = false);
+        },()=> this.update());
   }
 }

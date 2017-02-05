@@ -26,7 +26,8 @@
         <li><label>Id Proof:</label> {{farmer.idProof}}</li>
         <li><label>Aadhar Card no:</label> {{farmer.aadharCard}}</li>
         <li><label>FEF Email:</label> {{farmer.FEF}}</li>
-        <li><label>Donor Email:</label> {{farmer.donor}}</li>
+        <li *ngIf="!updateDoner"><label>Donor Email:</label> {{farmer.donor}}</li>
+        <li *ngIf="updateDoner"><label>Donor Email:</label> {{emailId}}</li>
       </ul>
       <h3>Land Details</h3>
       <ul>
