@@ -35,6 +35,6 @@ export class HeaderComponent  {
       this.edited = false;
       console.log(this.edited);
     }.bind(this), 2000);
-    
+
   }
 }

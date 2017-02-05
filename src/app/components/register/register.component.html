@@ -4,11 +4,11 @@
       <h2>Register</h2>
 
       <div *ngIf="isDuplicate" class="has-error">
-        <div class="help-block">Email Id already exist</div>
+        <div class="help-block">Email Id already exists</div>
       </div>
 
       <div *ngIf="hasError" class="has-error">
-        <div class="help-block">We encountered error please contack administrator</div>
+        <div class="help-block">We encountered error. Please contact administrator</div>
       </div>
 
       <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
@@ -20,7 +20,7 @@
           <div *ngIf="f.submitted && !name.valid && name.errors && name.errors.required" class="help-block">Name is
             required
           </div>
-          <div *ngIf="name.errors && name.errors.minlength" class="help-block">Name should have minimum 4 character
+          <div *ngIf="name.errors && name.errors.minlength" class="help-block">Name should have minimum 4 characters
           </div>
         </div>
 
@@ -32,7 +32,7 @@
             Password is required
           </div>
           <div *ngIf="password.errors && password.errors.minlength" class="help-block">Password should have minimum 4
-            character
+            characters
           </div>
         </div>
 
@@ -45,7 +45,7 @@
           <div *ngIf="f.submitted && !phoneNumber.valid && phoneNumber.errors && phoneNumber.errors.required"
                class="help-block">Phone Number is required
           </div>
-          <div *ngIf="phoneNumber.errors && phoneNumber.errors.pattern" class="help-block">Invalid Phone number</div>
+          <div *ngIf="phoneNumber.errors && phoneNumber.errors.pattern" class="help-block">Invalid Phone Number</div>
         </div>
 
         <div class="form-group" [ngClass]="{ 'has-error': (f.submitted && !emailId.valid) || (emailId.errors && emailId.errors.pattern) }">
@@ -53,7 +53,7 @@
           <input type="text" class="form-control" name="emailId" [(ngModel)]="model.emailId" #emailId="ngModel"
                  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
           <div *ngIf="f.submitted && !emailId.valid && emailId.errors && emailId.errors.required" class="help-block">
-            Email Id is required
+            Email is required
           </div>
           <div *ngIf="emailId.errors && emailId.errors.pattern" class="help-block">Email is invalid</div>
         </div>
@@ -66,8 +66,8 @@
                    checked="checked">Crop saver
           </label>
           <label class="radio-inline">
-            <input type="radio" class="radio-inline" [(ngModel)]="model.role" #role="ngModel" name="role" value="FEF">Farmer
-            educated friend
+            <input type="radio" class="radio-inline" [(ngModel)]="model.role" #role="ngModel" name="role" value="FEF">Farmer's
+            Educated friend
           </label>
           <!--TODO: validation-->
           <!--<div *ngIf="f.submitted && !role.valid" class="help-block">Please select role-->
@@ -83,7 +83,7 @@
             required
           </div>
           <div *ngIf="address.errors && address.errors.minlength" class="help-block">Name should have minimum 10
-            character
+            characters
           </div>
         </div>
 
