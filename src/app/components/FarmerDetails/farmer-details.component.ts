@@ -22,6 +22,10 @@ export class FarmerDetailsComponent implements OnInit {
     this.getStatus();
   }
 
+  getPhotoUrl(photoName: string){
+    return "http://localhost:8081/api/getPhoto?urlName=" + photoName;
+  }
+
   ngOnInit() {
     this.isLoading = true;
     this.farmerService.getSpecificFarmer(this.farmerId)
