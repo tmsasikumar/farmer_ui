@@ -7,9 +7,7 @@
         {{farmer.name}}
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.html">Home</a>
-        </li>
-        <li class="active">Portfolio Item</li>
+        <li>Premium amount: INR {{farmer.cropPremium}}/-</li>
       </ol>
     </div>
   </div>
@@ -22,13 +20,13 @@
       <img class="img-responsive" src="{{getPhotoUrl(farmer.landPhoto)}}" alt="">
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 farmer-details">
       <h3>Farmer Details</h3>
       <ul>
         <li><label>Name:</label> {{farmer.name}}</li>
         <li><label>Id Proof:</label> {{farmer.idProof}}</li>
         <li><label>Aadhar Card no:</label> {{farmer.aadharCard}}</li>
-        <li><label>Farmer's Educated Friend Email:</label> {{farmer.FEF}}</li>
+        <li><label>FEF Email:</label> {{farmer.FEF}}</li>
         <li><label>Donor Email:</label> {{farmer.donor}}</li>
       </ul>
       <h3>Land Details</h3>
@@ -40,9 +38,8 @@
       </ul>
       <h3>Crop Details</h3>
       <ul>
-        <li><label>Crop Type:</label> {{farmer.cropType}}</li>
-        <li><label>Crop Premium Amount:</label> {{farmer.cropPremium}}</li>
-        <li><label>Crop Risk:</label> {{farmer.cropRisk}}</li>
+        <li><label>Type:</label> {{farmer.cropType}}</li>
+        <li><label>Risk:</label> {{farmer.cropRisk}}</li>
         <li><label>Crop:</label> {{farmer.crop}}</li>
         <li><label>Cultivation Date:</label> {{farmer.cultivationDate}}</li>
         <li><label>Harvest Date:</label> {{farmer.harvestDate}}</li>

@@ -102,7 +102,7 @@
 
 .action-button {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0 40px;
 }
 .action-button button {
   width: 200px;
@@ -115,4 +115,16 @@
   z-index: 44;
   width: 80%;
   left: 10%;
+}
+
+.farmer-details h3 {
+  margin: 0 0 10px;
+  font-weight: 300;
+  font-size: 20px;
+  border-bottom: 1px solid #cac8c8;
+  line-height: 1.5;
+}
+
+.farmer-details ul {
+  padding: 0px 20px;
 }
