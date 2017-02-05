@@ -26,10 +26,10 @@
   text-transform: capitalize;
 }
 
-.thumbnail img {
+.thumbnail .img-wrap {
   width: 100%;
   min-height: 100px;
-  max-height: 200px;
+  max-height: 180px;
   overflow: hidden;
 }
 .premium {
@@ -74,4 +74,28 @@
 
 .farmer-catalog {
   margin-bottom: 50px;
+}
+
+.search-block {
+  background: #d8d8d8;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.search-block input {
+  margin-right: 2%;
+  height: 40px;
+}
+
+.search-block select {
+  border: 1px solid #dddddd;
+}
+
+.no-result {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: red;
 }

@@ -1,16 +1,17 @@
-
-  <div class="thumbnail">
+<div class="thumbnail">
+  <div class="img-wrap">
     <label class="label risk-label" ngClass="{{getRiskClass(_farmer.cropRisk)}}">{{_farmer.cropRisk}} risk</label>
     <img class="img-responsive" src="{{getPhotoUrl(_farmer.landPhoto)}}" alt="">
-    <div class="caption">
-      <h3>{{_farmer.name}}<br>
-        <small>{{_farmer.landAddress}}</small>
-      </h3>
-      <div class="label-wrap">
-        <p>Crop : {{_farmer.crop}}, {{_farmer.cropType}}</p>
-      </div>
-      <div class="premium">Premium : INR {{ _farmer.cropPremium}}/-</div>
-      <button class="btn btn-primary" routerLink="/farmerDetails/{{_farmer.farmerId}}">View details</button>
-    </div>
   </div>
+  <div class="caption">
+    <h3>{{_farmer.name}}<br>
+      <small>{{_farmer.landAddress}}</small>
+    </h3>
+    <div class="label-wrap">
+      <p>Crop : {{_farmer.crop}}, {{_farmer.cropType}}</p>
+    </div>
+    <div class="premium">Premium : INR {{ _farmer.cropPremium}}/-</div>
+    <button class="btn btn-primary" routerLink="/farmerDetails/{{_farmer.farmerId}}">View details</button>
+  </div>
+</div>
 

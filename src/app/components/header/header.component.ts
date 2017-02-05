@@ -23,6 +23,6 @@ export class HeaderComponent  {
 
   logout(){
     localStorage.removeItem('currentUser');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }
