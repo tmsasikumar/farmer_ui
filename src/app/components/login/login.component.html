@@ -6,7 +6,7 @@
         <div class="help-block">Invalid Email Id or password</div>
       </div>
       <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !emailId.valid }">
+        <div class="form-group" [ngClass]="{ 'has-error': (f.submitted && !emailId.valid) || (emailId.errors && emailId.errors.pattern) }">
           <label>Email Id</label>
           <input type="text" class="form-control" name="emailId" [(ngModel)]="model.emailId" #emailId="ngModel"
                  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
