@@ -99,3 +99,20 @@
   font-size: 14px;
   color: red;
 }
+
+.action-button {
+  text-align: center;
+  margin: 40px 0;
+}
+.action-button button {
+  width: 200px;
+  padding: 10px 15px;
+}
+
+.fixed-alert {
+  position: fixed;
+  top: 65px;
+  z-index: 44;
+  width: 80%;
+  left: 10%;
+}

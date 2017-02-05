@@ -28,7 +28,7 @@
         <li><label>Name:</label> {{farmer.name}}</li>
         <li><label>Id Proof:</label> {{farmer.idProof}}</li>
         <li><label>Aadhar Card no:</label> {{farmer.aadharCard}}</li>
-        <li><label>Farmer Educated Friend Email:</label> {{farmer.FEF}}</li>
+        <li><label>Farmer's Educated Friend Email:</label> {{farmer.FEF}}</li>
         <li><label>Donor Email:</label> {{farmer.donor}}</li>
       </ul>
       <h3>Land Details</h3>
@@ -50,10 +50,20 @@
     </div>
   </div>
 
-  <div *ngIf="!isStatusLoading">
-    <button *ngIf="paymentStatus.paymentStatus == '0' " (click)="insure()">Insure</button>
-    <div *ngIf="paymentStatus.paymentStatus == '1'">Paid</div>
-    <div *ngIf="paymentStatus.paymentStatus == '2'">Approved</div>
+  <div *ngIf="!isStatusLoading" class="action-button">
+    <button *ngIf="paymentStatus.paymentStatus == '0' " (click)="insure()" class="btn btn-primary">
+      <i class="fa fa-user"></i> Insure farmer
+    </button>
+    <div *ngIf="paymentStatus.paymentStatus == '1'" class="action-button">
+      <button class="btn btn-warning">
+        <i class="fa fa-circle-o-notch fa-spin fa-fw margin-bottom"></i> Paid
+      </button>
+    </div>
+    <div *ngIf="paymentStatus.paymentStatus == '2'" class="action-button">
+      <button class="btn btn-success">
+        <i class="fa fa-check-circle-o"></i> Approved
+      </button>
+    </div>
   </div>
 </div>
 
