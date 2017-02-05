@@ -99,3 +99,12 @@
   font-size: 14px;
   color: red;
 }
+
+.action-button {
+  text-align: center;
+  margin: 40px 0;
+}
+.action-button button {
+  width: 200px;
+  padding: 10px 15px;
+}
