@@ -8,6 +8,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {AuthGuard} from "./guards/auth.guard";
 import {FarmerDetailsComponent} from "./components/FarmerDetails/farmer-details.component";
+import {ContactComponent} from "./components/contact/contact.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'addFarmer', component: AddFarmerComponent },
     { path: 'faq', component: FaqComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+    { path: 'contact', component: ContactComponent},
     { path: 'farmerDetails/:id', component: FarmerDetailsComponent},
 
     // otherwise redirect to home
