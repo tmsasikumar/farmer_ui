@@ -84,9 +84,13 @@
   width: 100%;
 }
 
-.search-block input{
+.search-block input {
   margin-right: 2%;
   height: 40px;
+}
+
+.search-block select {
+  border: 1px solid #dddddd;
 }
 
 .no-result {
