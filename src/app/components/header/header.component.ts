@@ -33,7 +33,6 @@ export class HeaderComponent  {
 
     setTimeout(function() {
       this.edited = false;
-      console.log(this.edited);
     }.bind(this), 2000);
 
   }
