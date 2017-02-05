@@ -110,4 +110,8 @@ footer {
     .carousel .carousel {
         height: 70%;
     }
+
+  .item .fill {
+    background-position: inherit;
+  }
 }
