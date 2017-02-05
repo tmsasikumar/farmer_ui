@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { HomeComponent } from "./components/home.component";
 import { LoginComponent }  from './components/login/login.component';
-import { DashboardComponent }  from './components/dashboard/dashboard.component';
 import { RegisterComponent }  from './components/register/register.component';
 import {AuthenticationService} from "./services/AuthenticationService";
 import {HttpService} from "./services/httpService";
@@ -28,7 +27,7 @@ import {FarmerDetailsComponent} from "./components/FarmerDetails/farmer-details.
 
 @NgModule({
   imports:      [ BrowserModule, Routing, FormsModule, HttpModule, CommonModule ],
-  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, DashboardComponent, HeaderComponent,
+  declarations: [ AppComponent, HomeComponent, LoginComponent, RegisterComponent, HeaderComponent,
     AddFarmerComponent, FooterComponent, FarmerCardComponent, FarmerCatalogComponent, KeysPipe, FaqComponent,
     FarmerDetailsComponent, MyFarmersComponent, ContactComponent
   ],

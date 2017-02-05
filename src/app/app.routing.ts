@@ -4,7 +4,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from "./components/register/register.component";
 import { AddFarmerComponent } from "./components/farmer/add-farmer.component";
 import { HomeComponent } from "./components/home.component";
-import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {MyFarmersComponent} from "./components/farmer/my-farmers.component";
 import {AuthGuard} from "./guards/auth.guard";
@@ -18,7 +17,6 @@ const appRoutes: Routes = [
     { path: 'addFarmer', component: AddFarmerComponent },
     { path: 'faq', component: FaqComponent },
     { path: 'myFarmers', component: MyFarmersComponent },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     { path: 'contact', component: ContactComponent},
     { path: 'farmerDetails/:id', component: FarmerDetailsComponent},
 
