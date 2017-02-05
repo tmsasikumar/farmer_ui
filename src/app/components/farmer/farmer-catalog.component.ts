@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {farmerService} from "../../services/farmer-service";
 import {Crops} from "../../enums/crops.enum";
+import error = webdriver.error;
 
 
 @Component({
@@ -14,6 +15,7 @@ export class FarmerCatalogComponent implements OnInit {
   private farmers: Farmer[];
   private filteredFarmer: Farmer[];
   private userId: string;
+  noFarmers: boolean = false;
   crops: any;
 
   constructor(private farmerService: farmerService) {
@@ -30,6 +32,10 @@ export class FarmerCatalogComponent implements OnInit {
       .subscribe(AllFarmers => {
         this.farmers = AllFarmers;
         this.filteredFarmer = this.farmers;
+      },error => {
+        if(error.status == 404){
+          this.noFarmers = true;
+        }
       });
 
   }
