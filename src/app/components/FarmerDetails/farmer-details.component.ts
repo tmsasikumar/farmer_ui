@@ -16,9 +16,12 @@ export class FarmerDetailsComponent implements OnInit {
   isLoading: boolean;
   isStatusLoading: boolean;
   paymentStatus: any;
+  emailId: string;
 
   constructor(private farmerService: farmerService, route: ActivatedRoute) {
     this.farmerId = route.snapshot.params['id'];
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    this.emailId = user["emailId"];
     this.getStatus();
   }
 
@@ -53,7 +56,7 @@ export class FarmerDetailsComponent implements OnInit {
 
   insure(){
     this.isStatusLoading = true;
-    this.farmerService.pay({"farmerId": this.farmerId})
+    this.farmerService.pay({"farmerId": this.farmerId, "emailId": this.emailId})
       .subscribe(response=> this.paymentStatus = response,
         error => {
           this.errorMessage = "Server Error";
